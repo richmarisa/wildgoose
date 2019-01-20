@@ -4,13 +4,13 @@ Theme Name: Twenty Nineteen
 Theme URI: https://github.com/WordPress/twentynineteen
 Author: the WordPress team
 Author URI: https://wordpress.org/
-Description: A new Gutenberg-ready theme.
+Description: Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
 Requires at least: WordPress 4.9.6
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -416,7 +416,7 @@ body {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
   font-size: 1em;
-  line-height: 1.3;
+  line-height: 1.8;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -429,7 +429,7 @@ textarea {
   color: #111;
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.8;
   text-rendering: optimizeLegibility;
 }
 
@@ -621,7 +621,7 @@ blockquote cite {
 pre {
   font-size: 0.88889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  line-height: 1.3;
+  line-height: 1.8;
   overflow: auto;
 }
 
@@ -828,7 +828,7 @@ ol {
 }
 
 li {
-  line-height: 1.3;
+  line-height: 1.8;
 }
 
 li > ul,
@@ -1027,6 +1027,7 @@ a:focus {
 .main-navigation {
   display: block;
   margin-top: 0.25rem;
+  /* Un-style buttons */
   /*
 	 * Sub-menu styles
 	 *
@@ -1049,6 +1050,36 @@ body.page .main-navigation {
   display: inline;
 }
 
+.main-navigation button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.main-navigation button:hover, .main-navigation button:focus {
+  background: transparent;
+}
+
+.main-navigation button:focus {
+  outline: 1px solid transparent;
+  outline-offset: -4px;
+}
+
+.main-navigation button:active {
+  transform: scale(0.99);
+}
+
 .main-navigation .main-menu {
   display: inline-block;
   margin: 0;
@@ -1062,7 +1093,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li > a {
-  font-weight: 400;
+  font-weight: 700;
   color: #0073aa;
   margin-right: 0.5rem;
 }
@@ -1190,6 +1221,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
+  text-shadow: none;
   padding: calc( .5 * 1rem) calc( 24px + 1rem) calc( .5 * 1rem) 1rem;
   white-space: nowrap;
 }
@@ -1204,6 +1236,13 @@ body.page .main-navigation {
 .main-navigation .sub-menu > li > .menu-item-link-return:hover:after,
 .main-navigation .sub-menu > li > .menu-item-link-return:focus:after {
   background: #005177;
+}
+
+.main-navigation .sub-menu > li > .menu-item-link-return {
+  width: 100%;
+  font-size: 22px;
+  font-weight: normal;
+  text-align: left;
 }
 
 .main-navigation .sub-menu > li > a:empty {
@@ -1950,12 +1989,10 @@ body.page .main-navigation {
 /* Content */
 /*--------------------------------------------------------------
 ## Header
-----------------------------------------------------------*/
-/*
+--------------------------------------------------------------*/
 .site-header {
   padding: 1em;
 }
-*/
 
 .site-header.featured-image {
   display: flex;
@@ -1971,7 +2008,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .site-header {
     margin: 0;
-/*    padding: 3rem 0; */
+    padding: 3rem 0;
   }
   .site-header.featured-image {
     min-height: 100vh;
@@ -2165,6 +2202,10 @@ body.page .main-navigation {
   color: #fff;
 }
 
+.site-header.featured-image .main-navigation .sub-menu a {
+  opacity: inherit;
+}
+
 .site-header.featured-image .social-navigation a:focus {
   color: #fff;
   opacity: 1;
@@ -2219,13 +2260,12 @@ body.page .main-navigation {
   /* Entry meta */
 }
 
-/*
 @media only screen and (min-width: 768px) {
   .site-header.featured-image .site-featured-image .entry-header {
     margin-left: calc(10% + 60px);
     margin-right: calc(10% + 60px);
   }
-}*/
+}
 
 .site-header.featured-image .site-featured-image .entry-header .entry-title:before {
   background: #fff;
@@ -2314,7 +2354,6 @@ body.page .main-navigation {
   height: 100%;
 }
 
-/*
 .image-filters-enabled .site-header.featured-image .site-featured-image:before {
   background: #0073aa;
   mix-blend-mode: screen;
@@ -2325,12 +2364,14 @@ body.page .main-navigation {
   background: #000;
   mix-blend-mode: multiply;
   opacity: .7;
+  /* When image filters are active, a blue overlay is added. */
 }
 
 .image-filters-enabled .site-header.featured-image .site-featured-image:after {
   background: #0073aa;
   opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
 }
 
 @supports (mix-blend-mode: multiply) {
@@ -2344,6 +2385,7 @@ body.page .main-navigation {
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
+  /* Browsers supporting mix-blend-mode can have a light overlay */
 }
 
 @supports (mix-blend-mode: overlay) {
@@ -2354,10 +2396,14 @@ body.page .main-navigation {
 
 .site-header.featured-image:after {
   background: #000;
-
+  /**
+		 * Add a transition to the readability overlay, to add a subtle
+		 * but smooth effect when resizing the screen.
+		 */
   transition: opacity 1200ms ease-in-out;
   opacity: 0.7;
   z-index: 5;
+  /* When image filters are active, a blue overlay is added. */
 }
 
 .image-filters-enabled .site-header.featured-image:after {
@@ -2378,39 +2424,6 @@ body.page .main-navigation {
 .site-header.featured-image ::selection {
   background: rgba(255, 255, 255, 0.17);
 }
-*/
-
-/* rjm2 changes */
-
-
-.site-branding-container {
-  background: rgba(0, 0, 0, 0.5);
-  padding-left: 10px;
-  padding-right: 10px;
-  display: block;
-  width:100%;
-  z-index: 10;
-}
-/* .site-title, .main-navigation, */
-
-.entry-header,  .entry-meta {
-  background: rgba(0, 0, 0, 0.5);
-  display:block;
-  padding-left: 10px;
-  padding-right: 10px;
-  width:100%;
-}
-.site-title {
-  font-size: 25pt;
-  font-weight: bold;
-  display:block;
-  width:100%;
-}
-
-.main-menu > .menu-item > li > a {
-  font-weight: 300;
-}
-
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -2449,19 +2462,19 @@ body.page .main-navigation {
   margin-top: 0;
 }
 
-.entry .entry-title {
+.entry .entry-header {
   margin: calc(3 * 1rem) 1rem 1rem;
   position: relative;
 }
 
 @media only screen and (min-width: 768px) {
-  .entry .entry-title {
+  .entry .entry-header {
     margin: calc(3 * 1rem) calc(10% + 60px) 1rem;
   }
 }
 
 .entry .entry-title {
-  /* margin: 0; */
+  margin: 0;
 }
 
 .entry .entry-title:before {
@@ -2650,6 +2663,7 @@ body.page .main-navigation {
 
 .entry .entry-content .more-link:after {
   content: "\02192";
+  display: inline-block;
   margin-left: 0.5em;
 }
 
@@ -3700,6 +3714,10 @@ body.page .main-navigation {
   border-color: #111;
 }
 
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover:not(.has-background) {
+  color: #111;
+}
+
 .entry .entry-content .wp-block-archives,
 .entry .entry-content .wp-block-categories,
 .entry .entry-content .wp-block-latest-posts {
@@ -3777,14 +3795,14 @@ body.page .main-navigation {
 
 .entry .entry-content .wp-block-preformatted {
   font-size: 0.71111em;
-  line-height: 1.3;
+  line-height: 1.8;
   padding: 1rem;
 }
 
 .entry .entry-content .wp-block-verse {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-size: 22px;
-  line-height: 1.3;
+  line-height: 1.8;
 }
 
 .entry .entry-content .has-drop-cap:not(:focus):first-letter {
@@ -3933,7 +3951,7 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-quote p {
   font-size: 1em;
   font-style: normal;
-  line-height: 1.3;
+  line-height: 1.8;
 }
 
 .entry .entry-content .wp-block-quote cite {
@@ -3976,20 +3994,53 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content .wp-block-image {
+  max-width: 100%;
+}
+
 .entry .entry-content .wp-block-image img {
   display: block;
 }
 
-.entry .entry-content .wp-block-image.alignleft, .entry .entry-content .wp-block-image.alignright {
-  max-width: 100%;
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    margin: 0;
+    width: calc(8 * (100vw / 12) - 28px);
+  }
+  .entry .entry-content .wp-block-image .aligncenter img {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    width: calc(6 * (100vw / 12) - 28px);
+  }
+  .entry .entry-content .wp-block-image .aligncenter img {
+    margin: 0 auto;
+  }
 }
 
 .entry .entry-content .wp-block-image.alignfull img {
   width: 100vw;
+  max-width: calc( 100% + (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content .wp-block-image.alignfull img {
+    max-width: calc( 125% + 150px);
     margin-left: auto;
     margin-right: auto;
   }
@@ -4594,4 +4645,3 @@ svg {
 .gallery-item > div > a:focus {
   box-shadow: 0 0 0 2px #0073aa;
 }
-

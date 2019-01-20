@@ -408,7 +408,7 @@ body {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
   font-size: 1em;
-  line-height: 1.3;
+  line-height: 1.4;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -421,7 +421,7 @@ textarea {
   color: #111;
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.4;
   text-rendering: optimizeLegibility;
 }
 
@@ -822,7 +822,7 @@ ol {
 }
 
 li {
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 li > ul,
@@ -2378,7 +2378,7 @@ body.page .main-navigation {
 
 
 .site-branding-container {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 10, 30, 0.5);
   padding-left: 10px;
   padding-right: 10px;
   display: block;
@@ -2388,7 +2388,7 @@ body.page .main-navigation {
 /* .site-title, .main-navigation, */
 
 .entry-header,  .entry-meta {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 10, 30, 0.5);
   display:block;
   padding-left: 10px;
   padding-right: 10px;
@@ -3807,7 +3807,7 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-pullquote p {
   font-size: 1.6875em;
   font-style: italic;
-  line-height: 1.3;
+  line-height: 1.4;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
