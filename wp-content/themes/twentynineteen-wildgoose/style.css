@@ -2288,12 +2288,12 @@ body.page .main-navigation {
 
 .site-header.featured-image .site-branding {
   position: relative;
-  z-index: 10;
+  z-index: 4;
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
   position: relative;
-  z-index: 9;
+  z-index: 4;
 }
 
 .site-header.featured-image .site-branding-container:after,
@@ -2378,17 +2378,17 @@ body.page .main-navigation {
 
 
 .site-branding-container {
-  background: rgba(0, 10, 30, 0.5);
+  background: rgba(0, 10, 50, 0.5);
   padding-left: 10px;
   padding-right: 10px;
   display: block;
   width:100%;
-  z-index: 10;
+  z-index: 4;
 }
 /* .site-title, .main-navigation, */
 
 .entry-header,  .entry-meta {
-  background: rgba(0, 10, 30, 0.5);
+  background: rgba(0, 10, 50, 0.5);
   display:block;
   padding-left: 10px;
   padding-right: 10px;
