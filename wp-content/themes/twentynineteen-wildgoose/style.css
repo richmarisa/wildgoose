@@ -4592,3 +4592,14 @@ svg {
   box-shadow: 0 0 0 2px #0073aa;
 }
 
+.lcp_catlist > li {
+  list-style-type: none;
+}
+.lcp_title > a:link {
+  text-decoration: none;
+}
+.lcp_title > a:hover {
+  color: green;
+  text-decoration: none;
+
+}
